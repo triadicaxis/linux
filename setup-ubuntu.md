@@ -54,7 +54,7 @@ sudo c_rehash /opt/Citrix/ICAClient/keystore/cacerts/
 Configure Citrix Receiver
 `/opt/Citrix/ICAClient/util/configmgr &`
 
-(64-bit only) Fix Firefox plugin installation
+Fix Firefox plugin installation (64-bit only)
 ```
 sudo rm -f /usr/lib/mozilla/plugins/npwrapper.npica.so /usr/lib/firefox/plugins/npwrapper.npica.so
 sudo rm -f /usr/lib/mozilla/plugins/npica.so
@@ -66,6 +66,14 @@ Configure Firefox
 In Firefox, go to Tools -> Add-ons -> Plugins, and make sure the "Citrix Receiver for Linux" plugin is set to "Always Activate".
 
 Source [https://askubuntu.com/questions/40723/how-do-i-install-citrix-receiver#44137](https://askubuntu.com/questions/40723/how-do-i-install-citrix-receiver#44137)
+
+##### RStudio
+
+Download RStudio from [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download)
+Go to Downloads > right-click rstudio-xenial-1.1.453-amd64.deb > Open with Software Install > Install
+To launch, Search your computer > type "RStudio"
+
+Source [https://www.youtube.com/watch?v=P8wx4HY9me0](https://www.youtube.com/watch?v=P8wx4HY9me0)
 
 #### System Settings (left menu bar)
 *Appearance > Look* (reduce launcher icon size to 40) > Behaviour (show menus in title bar, select always displayed)
