@@ -6,10 +6,11 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 ```
-#### Install essential tools
+#### Install some essential tools
 ```
 sudo apt-get install git
 sudo apt-get install gksu
+sudo apt-get update && sudo apt-get install pandoc
 ```
 #### Install useful apps
 
@@ -17,6 +18,11 @@ sudo apt-get install gksu
 ```
 sudo apt-get update
 sudo apt-get install vlc
+```
+##### Atom editor (from terminal):
+```
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt update; sudo apt install atom
 ```
 
 ##### Skype (from terminal)
@@ -67,9 +73,14 @@ In Firefox, go to Tools -> Add-ons -> Plugins, and make sure the "Citrix Receive
 
 Source [https://askubuntu.com/questions/40723/how-do-i-install-citrix-receiver#44137](https://askubuntu.com/questions/40723/how-do-i-install-citrix-receiver#44137)
 
-##### RStudio
+##### R and RStudio
 
-Download RStudio from [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download)
+Step 1. From terminal:
+```
+sudo apt install r-base-core
+```
+
+Step 2. Download RStudio from [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download)
 Go to Downloads > right-click rstudio-xenial-1.1.453-amd64.deb > Open with Software Install > Install
 To launch, Search your computer > type "RStudio"
 
