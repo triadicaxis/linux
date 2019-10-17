@@ -1,3 +1,8 @@
+---
+output:
+ pdf_document: default
+ html_document: default
+---
 ## Things to do after installing Ubuntu 16.04 LTS:
 
 #### Open the terminal (Ctrl+Alt+T) and update + upgrade the system repos:
@@ -6,20 +11,55 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 ```
-#### Install some essential tools
+#### Install some basic tools
+
 ```
 sudo apt-get install git
 sudo apt-get install gksu
 sudo apt-get update && sudo apt-get install pandoc
-```
+``` 
+
 #### Install useful apps
 
-##### VLC media player (from terminal):
+Also see [http://www.linuxandubuntu.com/home/50-essential-linux-applications](http://www.linuxandubuntu.com/home/50-essential-linux-applications) 
+Also see [https://www.youtube.com/watch?v=a5cvg9XKEL8](https://www.youtube.com/watch?v=a5cvg9XKEL8)
+
+* rambox
+* kodi
+* stacer
+* timeshift
+* kdenlive
+* synaptic
+* vlc
+* nitroshare
+* chromium
+* gimp
+* mega
+* simplenote
+
+##### Stacer (from terminal)
+```
+sudo apt-get update -y
+sudo apt-get upgrade -y
+```
+Download latest version from sourceforge..
+```
+wget https://jaist.dl.sourceforge.net/project/stacer/v1.0.9/stacer_1.0.9_amd64.deb
+```
+Install downloaded..
+```
+sudo dpkg -i stacer_1.0.9_amd64.deb
+```
+Search Stacer in app center
+
+Also see [https://www.howtoforge.com/tutorial/how-to-install-stacer-system-monitoring-on-ubuntu-1804-lts/](https://www.howtoforge.com/tutorial/how-to-install-stacer-system-monitoring-on-ubuntu-1804-lts/)
+
+##### VLC media player (from terminal)
 ```
 sudo apt-get update
 sudo apt-get install vlc
 ```
-##### Atom editor (from terminal):
+##### Atom editor (from terminal)
 ```
 sudo add-apt-repository ppa:webupd8team/atom
 sudo apt update; sudo apt install atom
@@ -42,6 +82,101 @@ sudo apt-get update
 sudo apt-get install skype
 ```
 Source [https://idroot.net/linux/install-skype-ubuntu-16-04/](https://idroot.net/linux/install-skype-ubuntu-16-04/)
+
+##### Tabula for scraping PDFs (from terminal)
+
+Download tabula-jar.zip from the download site [https://tabula.technology/](https://tabula.technology/) and unzip it to the directory of your choice. Open a terminal window, and cd to inside the tabula directory you just unzipped. Then run:
+
+```
+java -Dfile.encoding=utf-8 -Xms256M -Xmx1024M -jar tabula.jar
+```
+Then manually navigate your browser to http://127.0.0.1:8080/ 
+If the program fails to run, double-check that you have Java installed and then try again.
+
+1. Upload a PDF file containing a data table. 
+2. Browse to the page you want, then select the table by clicking and dragging to draw a box around the table.
+3. Click "Preview & Export Extracted Data". Tabula will try to extract the data and display a preview. Inspect the data to make sure it looks correct. If data is missing, you can go back to adjust your selection.
+4. Click the "Export" button.
+5. Now you can work with your data as text file or a spreadsheet rather than a PDF! 
+
+Source [https://github.com/tabulapdf/tabula](https://github.com/tabulapdf/tabula)
+Source [https://alignedleft.com/resources/pdf-data-extraction-tools](https://alignedleft.com/resources/pdf-data-extraction-tools)
+
+##### youtube-dl (from terminal)
+
+0. Remove/purge old version of youtube-dl, if needed
+```
+sudo apt-get remove <application_name> ## removes only the package
+sudo apt-get purge <package-name> ## removes package + its config files
+sudo apt-get autoremove ## run this after a purge
+```
+1. Update and upgrade repos
+```
+sudo apt-get update -y
+sudo apt-get upgrade -y
+```
+2. Install curl
+```
+sudo apt-get install curl -y
+```
+
+3. Install youtube-dl binary
+```
+sudo curl -L https://yt-dl.org/latest/youtube-dl -o /usr/bin/youtube-dl
+```
+
+4. Change permissions
+```
+sudo chmod 755 /usr/bin/youtube-dl
+```
+
+5. Add PPA
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+```
+
+6. Update package repo
+```
+sudo apt-get update -y
+sudo apt-get install youtube-dlg -y
+``` 
+
+To use youtube-dl:
+
+* install all the available options
+```
+youtube-dl --h
+```
+* download a playlist as mp4 (format code = 18)
+```
+youtube-dl -f 18 https://www.youtube.com/watch?v=j_JgXJ-apXs
+```
+* if you want to check available formats 
+```
+youtube-dl -F https://www.youtube.com/watch?v=j_JgXJ-apXs
+```
+* download mp3 format
+```
+youtube-dl https://www.youtube.com/watch?v=j_JgXJ-apXs -x --audio-format mp3
+```
+* if the playlist is behind a proxy
+```
+youtube-dl --proxy http://proxy-ip:port https://www.youtube.com/watch?v=j_JgXJ-apXs
+```
+* download from a specified list of URLs
+```
+youtube-dl -a youtube-list.txt ## but first save URLs in youtube-list.txt, one per line
+``` 
+
+Source [https://askubuntu.com/questions/784240/how-can-i-download-a-youtube-playlist](https://askubuntu.com/questions/784240/how-can-i-download-a-youtube-playlist) 
+Source [https://www.howtoforge.com/tutorial/install-and-use-youtube-dl-on-ubuntu-1604/](https://www.howtoforge.com/tutorial/install-and-use-youtube-dl-on-ubuntu-1604/)
+
+##### texlive for knitr (from terminal)
+```
+sudo apt-get update
+sudo apt-get install texlive-latex-extra
+```
+Source [https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux) 
 
 ##### Citrix Receiver
 
